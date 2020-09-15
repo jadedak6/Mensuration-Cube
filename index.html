@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link href="style.css" rel="stylesheet" type="text/css"/>
+
+    <title>Cube</title>
+  </head>
+  <body>
+  <p class="heading">CUBE</p>
+
+  <div class="input-group mb-3">
+    <input type="number" class="form-control" placeholder="Enter side of the cube" aria-label="" aria-describedby="basic-addon1" id="num">
+  </div>
+
+  <div class="input-group mb-3">
+    <select class="custom-select" id="unit" aria-label="serivce">
+      <option selected>Unit</option>
+      <option value="mm">Millimeter</option>
+      <option value="cm">Centimeter</option>
+      <option value="in">Inches</option>
+      <option value="ft">Feet</option>
+      <option value="m">Meter</option>
+      <option value="km">Kilometer</option>
+    </select>
+  </div>
+
+  <button class="btn btn-light" onclick="vol()">Volume</button>
+  <button class="btn btn-light" onclick="lsa()">Lateral Surface Area</button>
+  <button class="btn btn-light" onclick="tsa()">Total Surface Area</button>
+
+  <p class="answer" id="ansid"></p>
+
+  <script>
+
+    function vol() {
+      let unit = document.getElementById("unit").value;
+      let input = document.getElementById("num").value;
+      if(input === ""){
+        alert("Please enter values");
+      }
+      let volans = input * input * input;
+      document.getElementById("ansid").innerHTML = "Volume of cube is "+ volans + " " + unit +"³" ;
+    }
+
+    function lsa() {
+      let unit = document.getElementById("unit").value;
+      let input = document.getElementById("num").value;
+      if(input === "") {
+        alert("Please enter values");
+      }
+        let lsaans = input * input * 4;
+      document.getElementById("ansid").innerHTML = "Lateral surface area of cube is "+ lsaans + " " + unit +"²" ;
+    }
+
+    function tsa() {
+      let unit = document.getElementById("unit").value;
+      let input = document.getElementById("num").value;
+      if(input === "") {
+        alert("Please enter values");
+      }
+        let tsaans = input * input * 6;
+      document.getElementById("ansid").innerHTML = "Total surface area of cube is "+ tsaans + " " + unit +"²" ;
+    }
+
+  </script>
+
+  </body>
+</html>
